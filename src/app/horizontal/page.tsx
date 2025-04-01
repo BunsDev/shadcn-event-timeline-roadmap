@@ -13,13 +13,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { events } from "@/data/events";
 
-interface EventTimelineCarouselProps {
-  height?: string;
-}
+const height = "30rem";
 
-export default function HorizontalEventTimelineCarousel({
-  height = "30rem",
-}: EventTimelineCarouselProps) {
+export default function HorizontalEventTimelineCarousel() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [expandedHeight, setExpandedHeight] = useState<number>(100);
@@ -36,7 +32,7 @@ export default function HorizontalEventTimelineCarousel({
       const availableHeight = totalHeight - headerHeight - 110;
       setExpandedHeight(Math.max(availableHeight, 50)); // Ensure minimum height of 50px
     }
-  }, [height]);
+  }, []);
 
   const toggleExpand = (index: number) => {
     if (index === currentIndex) {
