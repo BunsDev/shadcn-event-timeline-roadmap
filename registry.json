@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "Roadmap Timeline",
+  "homepage": "https://roadmap.hncore.website",
+  "items": [
+    {
+      "name": "horizontal-event-timeline-carousel",
+      "type": "registry:block",
+      "title": "Horizontal Event Timeline Carousel",
+      "description": "shadcn/ui horizontal event timeline and roadmap carousel block",
+      "registryDependencies": ["badge", "card"],
+      "files": [
+        {
+          "path": "src/app/horizontal/page.tsx",
+          "type": "registry:component",
+          "target": "components/horizontal-event-timeline-carousel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "vertical-event-timeline",
+      "type": "registry:block",
+      "title": "Vertical Event Timeline",
+      "description": "shadcn/ui vertical event timeline and roadmap block",
+      "registryDependencies": ["badge", "card"],
+      "files": [
+        {
+          "path": "src/app/vertical/page.tsx",
+          "type": "registry:component",
+          "target": "components/vertical-event-timeline.tsx"
+        }
+      ]
+    }
+  ]
+}
