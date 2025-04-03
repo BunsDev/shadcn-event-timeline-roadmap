@@ -18,7 +18,7 @@ export default function Page() {
             </h1>
             <p className="mb-6 mt-3 text-base">
               Speed up your workflow with responsive, pre-built UI blocks
-              designed for marketing websites.
+              designed for websites.
             </p>
           </div>
         </div>
