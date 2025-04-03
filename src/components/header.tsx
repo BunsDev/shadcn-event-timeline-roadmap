@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { Calendar } from "lucide-react";
+import { Calendar, Github } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 export function Header() {
   const pathname = usePathname();
@@ -26,6 +27,15 @@ export function Header() {
         </div>
 
         <div className="flex items-center gap-4">
+          <Button>
+            <Github className="h-4 w-4" />
+            <Link
+              href="https://github.com/aliezzahn/event-timeline-roadmap"
+              target="_blank"
+            >
+              Source Code
+            </Link>
+          </Button>
           <ThemeToggle />
         </div>
       </div>
