@@ -1,3 +1,7 @@
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/birobirobiro/awesome-shadcn-ui/)
+[![CI](https://github.com/aliezzahn/event-timeline-roadmap/actions/workflows/ci.yml/badge.svg)](https://github.com/aliezzahn/event-timeline-roadmap/actions/workflows/ci.yml)
+[![CD](https://github.com/aliezzahn/event-timeline-roadmap/actions/workflows/cd.yml/badge.svg)](https://github.com/aliezzahn/event-timeline-roadmap/actions/workflows/cd.yml)
+
 # `shadcn/ui` Event Timeline Roadmap
 
 A pair of customizable, animated event timeline components built with [shadcn/ui](https://ui.shadcn.com/), React, and Framer Motion. This package includes two variants:

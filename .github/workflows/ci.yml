@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check out the repository code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Install Bun
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      # Cache dependencies for faster installs
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.bun/install/cache
+          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lockb') }}
+          restore-keys: ${{ runner.os }}-bun-
+
+      # Install dependencies
+      - name: Install dependencies
+        run: bun install
+
+      # Run tests (optional, uncomment if you have tests)
+      # - name: Run tests
+      #   run: bun test
+
+      # Build the Next.js app
+      - name: Build
+        run: bun run build
