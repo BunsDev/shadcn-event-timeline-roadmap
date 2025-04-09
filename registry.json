@@ -53,6 +53,29 @@
           "target": "components/modern-vertical-event-timeline.tsx"
         }
       ]
+    },
+    {
+      "name": "gantt-chart-roadmap-timeline",
+      "type": "registry:block",
+      "title": "Gantt Chart Roadmap Timeline",
+      "description": "shadcn/ui gantt chart roadmap and timeline block",
+      "registryDependencies": [
+        "badge",
+        "tooltip",
+        "dialog",
+        "select",
+        "progress",
+        "separator",
+        "scroll-area",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "src/app/gantt/page.tsx",
+          "type": "registry:component",
+          "target": "components/gantt-chart-roadmap-timeline.tsx"
+        }
+      ]
     }
   ]
 }

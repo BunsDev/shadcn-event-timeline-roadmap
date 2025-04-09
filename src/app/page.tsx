@@ -42,6 +42,12 @@ export default function Page() {
         code={loadCode("src/app/modern/page.tsx")}
         preview="/modern"
       />
+      <BlockPreview
+        category="gantt-chart-roadmap-timeline"
+        title="gantt-chart-roadmap"
+        code={loadCode("src/app/gantt/page.tsx")}
+        preview="/gantt"
+      />
     </main>
   );
 }
