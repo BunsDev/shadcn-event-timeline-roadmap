@@ -1,4 +1,4 @@
-export default function GranttLayout({
+export default function KanbanLayout({
                                        children,
                                      }: Readonly<{
   children: React.ReactNode;

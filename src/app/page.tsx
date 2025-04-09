@@ -48,6 +48,12 @@ export default function Page() {
         code={loadCode("src/app/gantt/page.tsx")}
         preview="/gantt"
       />
+      <BlockPreview
+        category="kanban-roadmap-timeline"
+        title="kanban-roadmap"
+        code={loadCode("src/app/kanban/page.tsx")}
+        preview="/kanban"
+      />
     </main>
   );
 }

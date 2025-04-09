@@ -9,7 +9,7 @@ import {Button} from "@/components/ui/button";
 
 export function Header() {
   const pathname = usePathname();
-  const noHeaderRoutes = ["/horizontal", "/vertical", "/modern", "/gantt"];
+  const noHeaderRoutes = ["/horizontal", "/vertical", "/modern", "/gantt", "/kanban"];
   const showHeader = !noHeaderRoutes.includes(pathname);
   return (
     <header
