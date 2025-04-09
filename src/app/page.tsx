@@ -11,7 +11,8 @@ export default function Page() {
   return (
     <main className="">
       <section>
-        <div className="mx-4 max-w-7xl border-x px-4 py-16 [--color-border:color-mix(in_oklab,var(--color-zinc-200)_75%,transparent)] md:mx-auto dark:[--color-border:color-mix(in_oklab,var(--color-zinc-800)_60%,transparent)]">
+        <div
+          className="mx-4 max-w-7xl border-x px-4 py-16 [--color-border:color-mix(in_oklab,var(--color-zinc-200)_75%,transparent)] md:mx-auto dark:[--color-border:color-mix(in_oklab,var(--color-zinc-800)_60%,transparent)]">
           <div className="max-w-2xl">
             <h1 className="text-balance text-3xl font-bold sm:text-4xl">
               shadcn/ui Roadmap Timeline Blocks
@@ -34,6 +35,12 @@ export default function Page() {
         title="vertical-event"
         code={loadCode("src/app/vertical/page.tsx")}
         preview="/vertical"
+      />
+      <BlockPreview
+        category="modern-vertical-event-timeline"
+        title="modern-vertical-event"
+        code={loadCode("src/app/modern/page.tsx")}
+        preview="/modern"
       />
     </main>
   );

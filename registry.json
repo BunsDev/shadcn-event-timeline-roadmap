@@ -8,7 +8,10 @@
       "type": "registry:block",
       "title": "Horizontal Event Timeline Carousel",
       "description": "shadcn/ui horizontal event timeline and roadmap carousel block",
-      "registryDependencies": ["badge", "card"],
+      "registryDependencies": [
+        "badge",
+        "card"
+      ],
       "files": [
         {
           "path": "src/app/horizontal/page.tsx",
@@ -22,7 +25,10 @@
       "type": "registry:block",
       "title": "Vertical Event Timeline",
       "description": "shadcn/ui vertical event timeline and roadmap block",
-      "registryDependencies": ["badge", "card"],
+      "registryDependencies": [
+        "badge",
+        "card"
+      ],
       "files": [
         {
           "path": "src/app/vertical/page.tsx",
@@ -30,6 +36,25 @@
           "target": "components/vertical-event-timeline.tsx"
         }
       ]
+    },
+    {
+      "name": "modern-vertical-event-timeline",
+      "type": "registry:block",
+      "title": "Modern Vertical Event Timeline",
+      "description": "shadcn/ui modern vertical event timeline and roadmap block",
+      "registryDependencies": [
+        "badge",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "src/app/modern/page.tsx",
+          "type": "registry:component",
+          "target": "components/modern-vertical-event-timeline.tsx"
+        }
+      ]
     }
   ]
 }
+
+

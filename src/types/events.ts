@@ -1,10 +1,12 @@
-export type Events = {
+// @/types/events.ts
+export type Events = Array<{
   year: number;
-  periodType: string;
+  periodType: "Q" | "H";
   periodNumber: number;
   isChecked: boolean;
-  events: {
+  events: Array<{
     title: string;
     isChecked: boolean;
-  }[];
-}[];
+    type?: string; // Add this
+  }>;
+}>;

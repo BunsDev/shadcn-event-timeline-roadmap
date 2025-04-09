@@ -1,23 +1,23 @@
 "use client";
 
 import type React from "react";
-import { useState, useRef, useEffect } from "react";
-import { Check, Code2, Copy, Eye, Maximize, Terminal } from "lucide-react";
+import {useState, useRef, useEffect} from "react";
+import {Check, Code2, Copy, Eye, Maximize, Terminal} from "lucide-react";
 import {
   Panel,
   PanelGroup,
   PanelResizeHandle,
   type ImperativePanelGroupHandle,
 } from "react-resizable-panels";
-import { Separator } from "@/components/ui/separator";
+import {Separator} from "@/components/ui/separator";
 import * as RadioGroup from "@radix-ui/react-radio-group";
-import { useMedia } from "use-media";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import {useMedia} from "use-media";
+import {Button} from "@/components/ui/button";
+import {cn} from "@/lib/utils";
 import CodeBlock from "@/components/code-block";
 import Link from "next/link";
-import { useCopyClipboard } from "@/hooks/use-copy-clipboard";
-import { OpenInV0Button } from "@/components/open-in-v0";
+import {useCopyClipboard} from "@/hooks/use-copy-clipboard";
+import {OpenInV0Button} from "@/components/open-in-v0";
 
 export interface BlockPreviewProps {
   code?: string;
@@ -38,12 +38,12 @@ const LGSIZE = 82;
 const getCacheKey = (src: string) => `iframe-cache-${src}`;
 
 export const BlockPreview: React.FC<BlockPreviewProps> = ({
-  code,
-  preview,
-  title,
-  category,
-  previewOnly,
-}) => {
+                                                            code,
+                                                            preview,
+                                                            title,
+                                                            category,
+                                                            previewOnly,
+                                                          }) => {
   const [width, setWidth] = useState(DEFAULTSIZE);
   const [mode, setMode] = useState<"preview" | "code">("preview");
   const [iframeHeight, setIframeHeight] = useState(0);
@@ -59,11 +59,11 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({
 
   const terminalCode = `bunx --bun shadcn@canary add https://roadmap.hncore.website/r/${category}.json`;
 
-  const { copied: copiedCode, copy: copyCode } = useCopyClipboard(
+  const {copied: copiedCode, copy: copyCode} = useCopyClipboard(
     code as string
   );
 
-  const { copied: cliCopied, copy: cliCopy } = useCopyClipboard(terminalCode);
+  const {copied: cliCopied, copy: cliCopy} = useCopyClipboard(terminalCode);
 
   useEffect(() => {
     observer.current = new IntersectionObserver(
@@ -73,7 +73,7 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({
           observer.current?.disconnect();
         }
       },
-      { threshold: 0.1 }
+      {threshold: 0.1}
     );
 
     if (blockRef.current) {
@@ -90,7 +90,7 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({
       const cacheKey = getCacheKey(preview);
       const cached = localStorage.getItem(cacheKey);
       if (cached) {
-        const { height, timestamp } = JSON.parse(cached);
+        const {height, timestamp} = JSON.parse(cached);
         const now = Date.now();
         if (now - timestamp < 24 * 60 * 60 * 1000) {
           setCachedHeight(height);
@@ -153,17 +153,21 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({
   }, [preview, shouldLoadIframe]);
 
   return (
-    <section className="group mb-16 border-b [--color-border:color-mix(in_oklab,var(--color-zinc-200)_75%,transparent)] dark:[--color-border:color-mix(in_oklab,var(--color-zinc-800)_60%,transparent)]">
+    <section
+      className="group mb-16 border-b [--color-border:color-mix(in_oklab,var(--color-zinc-200)_75%,transparent)] dark:[--color-border:color-mix(in_oklab,var(--color-zinc-800)_60%,transparent)]">
       <div className="relative border-y">
         <div
           aria-hidden
           className="absolute inset-x-4 -top-14 bottom-0 mx-auto max-w-7xl lg:inset-x-0"
         >
-          <div className="to-(--color-border) absolute bottom-0 left-0 top-0 w-px bg-gradient-to-b from-transparent to-75%"></div>
-          <div className="to-(--color-border) absolute bottom-0 right-0 top-0 w-px bg-gradient-to-b from-transparent to-75%"></div>
+          <div
+            className="to-(--color-border) absolute bottom-0 left-0 top-0 w-px bg-gradient-to-b from-transparent to-75%"></div>
+          <div
+            className="to-(--color-border) absolute bottom-0 right-0 top-0 w-px bg-gradient-to-b from-transparent to-75%"></div>
         </div>
 
-        <div className="relative z-10 mx-auto flex max-w-7xl justify-between py-1.5 pl-8 pr-6 [--color-border:var(--color-zinc-200)] md:py-2 lg:pl-6 lg:pr-2 dark:[--color-border:var(--color-zinc-800)]">
+        <div
+          className="relative z-10 mx-auto flex max-w-7xl justify-between py-1.5 pl-8 pr-6 [--color-border:var(--color-zinc-200)] md:py-2 lg:pl-6 lg:pr-2 dark:[--color-border:var(--color-zinc-800)]">
           <div className="-ml-3 flex items-center gap-3">
             {code && (
               <>
@@ -175,7 +179,7 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({
                     checked={mode == "preview"}
                     className={radioItem}
                   >
-                    <Eye className="size-3.5 sm:opacity-50" />
+                    <Eye className="size-3.5 sm:opacity-50"/>
                     <span className="hidden text-[13px] sm:block">Preview</span>
                   </RadioGroup.Item>
 
@@ -186,7 +190,7 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({
                     checked={mode == "code"}
                     className={radioItem}
                   >
-                    <Code2 className="size-3.5 sm:opacity-50" />
+                    <Code2 className="size-3.5 sm:opacity-50"/>
                     <span className="hidden text-[13px] sm:block">Code</span>
                   </RadioGroup.Item>
                 </RadioGroup.Root>
@@ -201,12 +205,12 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({
               <>
                 {" "}
                 <span className="ml-2 text-sm capitalize">{title}</span>
-                <Separator orientation="vertical" className="!h-4" />{" "}
+                <Separator orientation="vertical" className="!h-4"/>{" "}
               </>
             )}
             <Button asChild variant="ghost" size="sm" className="size-8">
               <Link href={preview} passHref target="_blank">
-                <Maximize className="size-4" />
+                <Maximize className="size-4"/>
               </Link>
             </Button>
             <Separator
@@ -217,8 +221,8 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({
               {width < MDSIZE
                 ? "Mobile"
                 : width < LGSIZE
-                ? "Tablet"
-                : "Desktop"}
+                  ? "Tablet"
+                  : "Desktop"}
             </span>{" "}
           </div>
 
@@ -233,20 +237,20 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({
                   aria-label="copy code"
                 >
                   {cliCopied ? (
-                    <Check className="size-4" />
+                    <Check className="size-4"/>
                   ) : (
-                    <Terminal className="!size-3.5" />
+                    <Terminal className="!size-3.5"/>
                   )}
                   <span className="hidden font-mono text-xs md:block">
                     bunx --bun shadcn@canary add {category}
                   </span>
                 </Button>
-                <Separator className="!h-4" orientation="vertical" />
+                <Separator className="!h-4" orientation="vertical"/>
                 <OpenInV0Button
-                  {...{ title, category }}
+                  {...{title, category}}
                   block={`${category}`}
                 />
-                <Separator className="!h-4" orientation="vertical" />
+                <Separator className="!h-4" orientation="vertical"/>
                 <Button
                   onClick={copyCode}
                   size="sm"
@@ -255,9 +259,9 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({
                   className="size-8"
                 >
                   {copiedCode ? (
-                    <Check className="size-4" />
+                    <Check className="size-4"/>
                   ) : (
-                    <Copy className="!size-3.5" />
+                    <Copy className="!size-3.5"/>
                   )}
                 </Button>
               </>
@@ -302,7 +306,7 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({
                       title={title}
                       height={cachedHeight || iframeHeight}
                       className={cn(
-                        "h-(--iframe-height) block min-h-56 w-full duration-200 will-change-auto",
+                        "h-(--iframe-height) block min-h-56 max-h-320 w-full duration-200 will-change-auto",
                         !cachedHeight && "@starting:opacity-0 @starting:blur-xl"
                       )}
                       src={preview}
@@ -318,7 +322,7 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({
                     />
                   ) : (
                     <div className="flex min-h-56 items-center justify-center">
-                      <div className="border-primary size-6 animate-spin rounded-full border-2 border-t-transparent" />
+                      <div className="border-primary size-6 animate-spin rounded-full border-2 border-t-transparent"/>
                     </div>
                   )}
                 </div>
@@ -326,7 +330,8 @@ export const BlockPreview: React.FC<BlockPreviewProps> = ({
 
               {isLarge && (
                 <>
-                  <PanelResizeHandle className="relative w-2 before:absolute before:inset-0 before:m-auto before:h-12 before:w-1 before:rounded-full before:bg-zinc-300 before:transition-[height,background] hover:before:h-16 hover:before:bg-zinc-400 focus:before:bg-zinc-400 dark:before:bg-zinc-600 dark:hover:before:bg-zinc-500 dark:focus:before:bg-zinc-400" />
+                  <PanelResizeHandle
+                    className="relative w-2 before:absolute before:inset-0 before:m-auto before:h-12 before:w-1 before:rounded-full before:bg-zinc-300 before:transition-[height,background] hover:before:h-16 hover:before:bg-zinc-400 focus:before:bg-zinc-400 dark:before:bg-zinc-600 dark:hover:before:bg-zinc-500 dark:focus:before:bg-zinc-400"/>
                   <Panel
                     id={`code-${title}`}
                     order={2}
