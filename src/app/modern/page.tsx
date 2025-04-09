@@ -69,6 +69,7 @@ export default function ModernVerticalEventTimeline() {
   }));
   const typeData = filteredEvents.map((item) => {
     const types = Object.keys(typeColors);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const result: any = {name: `${item.year} ${formatPeriod(item)}`, Total: item.events.length};
     types.forEach((type) => {
       result[type] = item.events.filter((e) => e.type === type && e.isChecked).length;
@@ -246,7 +247,7 @@ export default function ModernVerticalEventTimeline() {
     [filteredEvents, expandedIndex]
   );
 
-  
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
       <motion.h1 className="text-3xl font-bold text-center mb-2" initial={{opacity: 0, y: -20}}
@@ -297,7 +298,7 @@ export default function ModernVerticalEventTimeline() {
               <div>
                 <h3 className="text-sm font-medium text-[color:var(--muted-foreground)] mb-2">Progress by Period</h3>
                 <BarChart width={300} height={200} data={progressData}>
-                  <XAxis dataKey="name" tick={{fontSize: 12, fill: "var(--muted-foreground)"}}
+                  <XAxis id="x-axis-1" dataKey="name" tick={{fontSize: 12, fill: "var(--muted-foreground)"}}
                          stroke="var(--muted-foreground)"/>
                   <YAxis id="x-axis" stroke="var(--muted-foreground)"/>
                   <Tooltip contentStyle={{
