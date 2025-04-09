@@ -1,15 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { Calendar, Github } from "lucide-react";
-import { ThemeToggle } from "@/components/theme-toggle";
-import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import {Calendar, Github} from "lucide-react";
+import {ThemeToggle} from "@/components/theme-toggle";
+import {usePathname} from "next/navigation";
+import {cn} from "@/lib/utils";
+import {Button} from "@/components/ui/button";
 
 export function Header() {
   const pathname = usePathname();
-  const noHeaderRoutes = ["/horizontal", "/vertical"];
+  const noHeaderRoutes = ["/horizontal", "/vertical", "/modern"];
   const showHeader = !noHeaderRoutes.includes(pathname);
   return (
     <header
@@ -20,7 +20,7 @@ export function Header() {
     >
       <div className="flex h-16 items-center justify-around">
         <div className="flex items-center gap-2">
-          <Calendar className="h-6 w-6 text-primary" />
+          <Calendar className="h-6 w-6 text-primary"/>
           <Link href="/" className="flex items-center">
             <span className="text-lg font-semibold">Timeline Roadmap</span>
           </Link>
@@ -28,7 +28,7 @@ export function Header() {
 
         <div className="flex items-center gap-4">
           <Button>
-            <Github className="h-4 w-4" />
+            <Github className="h-4 w-4"/>
             <Link
               href="https://github.com/aliezzahn/event-timeline-roadmap"
               target="_blank"
@@ -36,7 +36,7 @@ export function Header() {
               Source Code
             </Link>
           </Button>
-          <ThemeToggle />
+          <ThemeToggle/>
         </div>
       </div>
     </header>
