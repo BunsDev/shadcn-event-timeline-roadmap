@@ -1,4 +1,4 @@
-<img src="https://roadmap.hncore.website.com/banner.jpg" alt="Event Timeline Roadmap aliezzahn">
+<img src="https://roadmap.hncore.website/banner.jpg" alt="Event Timeline Roadmap aliezzahn">
 
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/birobirobiro/awesome-shadcn-ui/)
 [![CI](https://github.com/aliezzahn/event-timeline-roadmap/actions/workflows/ci.yml/badge.svg)](https://github.com/aliezzahn/event-timeline-roadmap/actions/workflows/ci.yml)
