@@ -3,9 +3,9 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
 
 interface CustomCurvedArrowProps {
-  startElement: React.RefObject<HTMLElement> | null;
-  endElement: React.RefObject<HTMLElement> | null;
-  obstacleElement?: React.RefObject<HTMLElement> | null;
+  startElement: React.RefObject<HTMLElement | null> | null;
+  endElement: React.RefObject<HTMLElement | null> | null;
+  obstacleElement?: React.RefObject<HTMLElement | null> | null;
   startX?: number;
   startY?: number;
   endX?: number;
