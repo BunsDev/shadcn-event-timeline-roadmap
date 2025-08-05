@@ -140,3 +140,19 @@
     @apply bg-background text-foreground;
   }
 }
+
+.rounded-underline {
+  position: relative;
+  text-decoration: none;
+}
+
+.rounded-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  height: 6px;
+  background-color: #5e0e8c;
+  border-radius: 3px;
+}
